@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/credentia
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3000/dashboard'],
+  origin: ['http://localhost:3000', 'http://localhost:3000/dashboard', /^https:\/\/.*\.netlify\.app$/],
   credentials: true
 }));
 app.use(express.json());
